@@ -24,7 +24,7 @@
         } else if ( count <= 3 && count > 0){
           $scope.msg = "Enjoy!";
         } else if ( count <= 0) {
-          $scope.msg = "";
+          $scope.msg = "Please enter data first";
         }
     };
   }
