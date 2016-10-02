@@ -1,23 +1,37 @@
-<!DOCTYPE html>
-<html ng-app='MsgApp'>
+<!doctype html>
+<html lang="en" ng-app='LunchCheck'>
   <head>
-    <meta charset="utf-8">
-    <script src="../angular.min.js"></script>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <style> body { font-size: 1.2em; }</style>
-    <title>Expressions and Interpolation</title>
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
   </head>
-  <body>
-    <h1>Expressions and Interpolation</h1>
-    <div ng-controller='MsgController'>
-      {{name}} has a message for you: <br>
-      {{sayMessage()}}
-      <div>
-        <button ng-click="feedYaakov()">Feed Yaakov</button>
-        <br>
+<body >
+   <div class="container" ng-controller='LunchCheckController'>
+     <h1>Lunch Checker</h1>
 
-        <img ng-src="images/yaakov_{{stateOfBeing}}.png">
-      </div>
-    </div>
-  </body>
+         <div class="form-group">
+             <input id="lunch-menu"
+                    type="text"
+                    placeholder="list comma separated dishes you usually have for lunch"
+                    class="form-control"
+                    ng-model='lunchMenu'>
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default"
+                     ng-click='lunchCheckerBtn();'>
+                     Check If Too Much
+             </button>
+         </div>
+         <div class="form-group message">
+           {{msg}}
+           <!-- Your message can go here. -->
+         </div>
+   </div>
+
+</body>
 </html>
