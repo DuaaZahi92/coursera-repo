@@ -20,7 +20,7 @@ function ToBuyController(ShoppingListCheckOffService) {
 AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
 function AlreadyBoughtController(ShoppingListCheckOffService) {
   var bought = this;
-  bought.items = ShoppingListCheckOffService.getBoughtItems(); 
+  bought.items = ShoppingListCheckOffService.getBoughtItems();
   bought.boughtItemsCount = ShoppingListCheckOffService.getBoughtItemsLength();
 }
 
@@ -38,6 +38,22 @@ function ShoppingListCheckOffService() {
      {
        name: "Chips",
        quantity: "5 bags"
+     },
+     {
+       name: "Bread",
+       quantity: "10 loafs"
+     },
+     {
+       name: "Banana",
+       quantity: "15 pieces"
+     },
+     {
+       name: "Strawberry"
+       quantity: "100 pieces"
+     },
+     {
+       name: "Mango"
+       quantity: "2 big pieces"
      }
    ];
 
