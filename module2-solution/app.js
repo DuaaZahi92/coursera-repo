@@ -38,8 +38,24 @@ function ShoppingListCheckOffService() {
      {
        name: "Chips",
        quantity: "5 bags"
+     },
+     {
+       name: "Bread",
+       quantity: "10 loafs"
+     },
+     {
+       name: "Banana",
+       quantity: "15 pieces"
+     },
+     {
+       name: "Strawberry",
+       quantity: "100 pieces"
+     },
+     {
+       name: "Mango",
+       quantity: "2 big pieces"
      }
-   ];
+    ];
 
    var bought = [];
 
