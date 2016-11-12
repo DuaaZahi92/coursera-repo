@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app='NarrowItDown'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <title>Using $http Service</title>
+  </head>
+  <body>
+    <h1>Resturant Menu Items</h1>
+
+    <div ng-controller='NarrowItDownController as narrow'>
+      <h3>List of Menu Categories</h3>
+      <input type="text" name="searchText" ng-model="narrow.searchText" placeholder="Search menu items"/>
+      <button type="button"
+              name="narrowItDownForMeBtn"
+              class="btn btn-primary"
+              ng-click="narrow.narrowItDown();">
+              Narrow It Down For Me!
+      </button>
+      <div class="text-danger" ng-if="narrow.err.value">
+          {{ narrow.err.msg }}
+      </div>
+      <div ng-if="narrow.found.length > 0">
+        <h3>Found the following items: </h3>
+        <found-items
+            list="narrow.found"
+            remove-this-item="narrow.removeItem(removeItemIndex)">
+        </found-items>
+      </div>
+    </div>
+
+    </div>
+  </body>
+</html>
