@@ -1,0 +1,15 @@
+<div>
+  <a ui-sref="home">Home</a> &lt;
+  <a ui-sref="categories">Categories</a> &lt;
+  <hr/>
+</div>
+<div>
+  <h2>{{catDetailsCtrl.category.name}} ({{catDetailsCtrl.category.short_name}})</h2>
+  <h6>{{catDetailsCtrl.category.special_instructions}}</h6>
+  <ul class="list-group">
+    <li class="list-group-item"
+        ng-repeat="item in catDetailsCtrl.catDetailsList">
+        {{item.id}}. <b>{{ item.name }}</b> : {{item.description}}
+   </li>
+  </ul>
+</div>

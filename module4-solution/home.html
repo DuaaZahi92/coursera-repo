@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app='MenuApp'>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <title>Resturant Menu</title>
+  </head>
+  <body class="container">
+    <div class="header">
+
+    </div>
+    <div class="container">
+      <h1>Welcome to our Resturant :)</h1>
+      <p>
+        Press the button to view menu categories:
+      </p>
+      <ui-view></ui-view>
+    </div>
+
+    <div class="footer">
+      <p class="text primary" > This is footer </p>
+    </div>
+    <!-- libraries -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- Data module -->
+    <script src="src/menu/data.module.js"></script>
+    <script src="src/menu/menuData.service.js"></script>
+
+    <!-- MenuApp module -->
+    <script src="src/menu/menuapp.module.js"></script>
+
+    <!-- menu component -->
+    <script src="src/menu/menuapp.component.js"></script>
+    <!-- categories component -->
+    <script src="src/menu/categories.component.js"></script>
+    <script src="src/menu/categories.controller.js"></script>
+    <!-- category details component -->
+    <script src="src/menu/cat-details.component.js"></script>
+    <script src="src/menu/cat-detail.controller.js"></script>
+    <!-- routes -->
+    <script src="src/routes.js"></script>
+
+
+
+
+
+
+
+
+    <!-- -->
+
+  </body>
+</html>

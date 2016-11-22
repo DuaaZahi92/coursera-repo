@@ -1,0 +1,13 @@
+<div>
+  <a ui-sref="home">Home</a> &lt; <span>Categories</span>
+  <hr/>
+</div>
+<div>
+  <ul class="list-group">
+    <a  class="list-group-item"
+        ng-repeat="cat in catCtrl.catList"
+        ui-sref="catDetails({catId: cat.short_name})">
+       {{ cat.name }} ( {{cat.short_name}} )
+   </a>
+  </ul>
+</div>
