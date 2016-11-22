@@ -5,11 +5,13 @@
 </div>
 <div>
   <h2>{{catDetailsCtrl.category.name}} ({{catDetailsCtrl.category.short_name}})</h2>
-  <h6>{{catDetailsCtrl.category.special_instructions}}</h6>
+  <p class="text-default">{{catDetailsCtrl.category.special_instructions}}</p>
   <ul class="list-group">
     <li class="list-group-item"
         ng-repeat="item in catDetailsCtrl.catDetailsList">
-        {{item.id}}. <b>{{ item.name }}</b> : {{item.description}}
+        <p class="text-primary"><b>{{ item.name }}</b></p>
+        <p class="text-info"> {{item.description}}</p>
+        <p class="text-danger"> ${{item.price_large}}</p>
    </li>
   </ul>
 </div>
