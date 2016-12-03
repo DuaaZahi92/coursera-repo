@@ -1,0 +1,183 @@
+<div class="container">
+  <div class="text">
+    <h2> Sign up for our newsletter </h2>
+  </div>
+  <form name="userForm" novalidate>
+    <div class="form-group"
+         ng-class="{ 'has-feedback' : userForm.firstName.$touched,
+                     'has-error': (userForm.firstName.$invalid && userForm.firstName.$touched),
+                     'has-success': (userForm.firstName.$valid && userForm.firstName.$touched)
+                   }">
+      <label for="firstName">First Name</label>
+      <input id="firstName"
+             name="firstName"
+             type="text"
+             class="form-control"
+             ng-model="signUpCtrl.userInfo.firstName"
+             ng-maxlength="15"
+             required="true"
+             placeholder="First Name e.g. John"
+             aria-describedby="fn-status">
+             <span class="glyphicon glyphicon-ok form-control-feedback"
+                    ng-if="userForm.firstName.$valid"
+                    aria-hidden="true"></span>
+             <span class="glyphicon glyphicon-remove form-control-feedback"
+                   ng-if="userForm.firstName.$invalid"
+                   aria-hidden="true"></span>
+             <span id="fn-status" class="sr-only" ng-if="userForm.firstName.$valid">(success)</span>
+             <span id="fn-status" class="sr-only" ng-if="userForm.firstName.$invalid">(error)</span>
+             <span id="fn-helpBlock"
+                  class="help-block"
+                  ng-if="userForm.firstName.$error.required && userForm.firstName.$touched">
+                  First Name is mandatory
+            </span>
+            <span id="fn-helpBlock"
+                  class="help-block"
+                  ng-if="userForm.firstName.$error.maxlength && userForm.firstName.$touched">
+                  First Name can't be more than 15 characters length
+            </span>
+    </div>
+    <div class="form-group"
+         ng-class="{ 'has-feedback' : userForm.lastName.$touched,
+                     'has-error': (userForm.lastName.$invalid && userForm.lastName.$touched),
+                     'has-success': (userForm.lastName.$valid && userForm.lastName.$touched)
+                   }">
+      <label for="lastName">Last Name</label>
+      <input id="lastName"
+             name="lastName"
+             type="text"
+             class="form-control"
+             ng-model="signUpCtrl.userInfo.lastName"
+             ng-maxlength="15"
+             required="true"
+             placeholder="Last Name e.g. Doe"
+             aria-describedby="ln-status">
+             <span class="glyphicon glyphicon-ok form-control-feedback"
+                    ng-if="userForm.lastName.$valid"
+                    aria-hidden="true"></span>
+             <span class="glyphicon glyphicon-remove form-control-feedback"
+                   ng-if="userForm.lastName.$invalid"
+                   aria-hidden="true"></span>
+             <span id="ln-status" class="sr-only" ng-if="userForm.lastName.$valid">(success)</span>
+             <span id="ln-status" class="sr-only" ng-if="userForm.lastName.$invalid">(error)</span>
+             <span id="ln-helpBlock"
+                  class="help-block"
+                  ng-if="userForm.lastName.$error.required && userForm.lastName.$touched">
+                  Last Name is mandatory
+            </span>
+            <span id="ln-helpBlock"
+                  class="help-block"
+                  ng-if="userForm.lastName.$error.maxlength && userForm.lastName.$touched">
+                  Last Name can't be more than 15 characters length
+            </span>
+    </div>
+    <div class="form-group"
+         ng-class="{ 'has-feedback' : userForm.email.$touched,
+                     'has-error': (userForm.email.$invalid && userForm.email.$touched),
+                     'has-success': (userForm.email.$valid && userForm.email.$touched)
+                   }">
+      <label for="email">Email</label>
+      <input id="email"
+             name="email"
+             type="email"
+             class="form-control"
+             ng-model="signUpCtrl.userInfo.email"
+             required="true"
+             placeholder="john.doe@conso.com"
+             aria-describedby="em-status">
+             <span class="glyphicon glyphicon-ok form-control-feedback"
+                    ng-if="userForm.email.$valid"
+                    aria-hidden="true"></span>
+             <span class="glyphicon glyphicon-remove form-control-feedback"
+                   ng-if="userForm.email.$invalid"
+                   aria-hidden="true"></span>
+             <span id="em-status" class="sr-only" ng-if="userForm.email.$valid">(success)</span>
+             <span id="em-status" class="sr-only" ng-if="userForm.email.$invalid">(error)</span>
+             <span id="em-helpBlock"
+                  class="help-block"
+                  ng-if="userForm.email.$error.required && userForm.email.$touched">
+                  Email is mandatory
+            </span>
+    </div>
+    <div class="form-group"
+         ng-class="{ 'has-feedback' : userForm.phone.$touched,
+                     'has-error': (userForm.phone.$invalid && userForm.phone.$touched),
+                     'has-success': (userForm.phone.$valid && userForm.phone.$touched)
+                   }">
+      <label for="phone">Phone</label>
+      <input id="phone"
+             name="phone"
+             type="phone"
+             class="form-control"
+             ng-model="signUpCtrl.userInfo.phone"
+             required="true"
+             pattern="(\d{3})\s(\d{3})\s(\d{4})"
+             placeholder="e.g. xxx xxx xxxx"
+             aria-describedby="ph-status">
+             <span class="glyphicon glyphicon-ok form-control-feedback"
+                    ng-if="userForm.phone.$valid"
+                    aria-hidden="true"></span>
+             <span class="glyphicon glyphicon-remove form-control-feedback"
+                   ng-if="userForm.phone.$invalid"
+                   aria-hidden="true"></span>
+             <span id="ph-status" class="sr-only" ng-if="userForm.phone.$valid">(success)</span>
+             <span id="ph-status" class="sr-only" ng-if="userForm.phone.$invalid">(error)</span>
+             <span id="ph-helpBlock"
+                  class="help-block"
+                  ng-if="userForm.phone.$error.required && userForm.phone.$touched">
+                  Phone is mandatory
+            </span>
+            <span id="ph-helpBlock"
+                 class="help-block"
+                 ng-if="userForm.phone.$error.pattern && userForm.phone.$touched">
+                 Phone # should be like e.g. xxx xxx xxxx
+           </span>
+    </div>
+
+    <div class="form-group"
+         ng-class="{ 'has-feedback' : userForm.favdishSN.$touched,
+                     'has-error': (userForm.favdishSN.$invalid && userForm.favdishSN.$touched),
+                     'has-success': (userForm.favdishSN.$valid && userForm.favdishSN.$touched && signUpCtrl.favDishAval)
+                   }">
+      <label for="favdishSN">Favorite Dish</label>
+      <input id="favdishSN"
+             name="favdishSN"
+             type="text"
+             class="form-control"
+             ng-model="signUpCtrl.userInfo.favdishSN"
+             required="true"
+             ng-change="signUpCtrl.favdishValidator()"
+             ng-Trim="true"
+             placeholder="e.g. A1 for soup"
+             aria-describedby="fd-status">
+             <span class="glyphicon glyphicon-ok form-control-feedback"
+                    ng-if="userForm.favdishSN.$valid && signUpCtrl.favDishAval"
+                    aria-hidden="true"></span>
+             <span class="glyphicon glyphicon-remove form-control-feedback"
+                   ng-if="userForm.favdishSN.$invalid && userForm.favdishSN.$touched"
+                   aria-hidden="true"></span>
+             <span id="fd-status" class="sr-only" ng-if="userForm.favdishSN.$valid && signUpCtrl.favDishAval">(success)</span>
+             <span id="fd-status" class="sr-only" ng-if="userForm.favdishSN.$invalid && userForm.favdishSN.$touched">(error)</span>
+             <span id="fd-helpBlock"
+                  class="help-block"
+                  ng-if="userForm.favdishSN.$error.required && userForm.favdishSN.$touched">
+                  Favorite Dish is mandatory
+            </span>
+            <span id="fd-helpBlock"
+                 class="help-block"
+                 ng-if="!signUpCtrl.favDishAval  && userForm.favdishSN.$touched" >
+                 No such menu number: {{signUpCtrl.userInfo.favdishSN}} exists :(
+           </span>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-default" type="submit" name="button"
+              ng-disabled="userForm.$invalid"  ng-click="signUpCtrl.saveUserInfo()">
+        Submit
+      </button>
+    </div>
+
+    <div class="alert alert-success" ng-if="signUpCtrl.done">
+      Your Information has been saved
+    </div>
+  </form>
+</div>

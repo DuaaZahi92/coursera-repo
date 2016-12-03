@@ -43,11 +43,25 @@ function routeConfig ($stateProvider) {
     })
     .state('public.myInfo', {
       url: '/myinfo',
-      templateUrl: 'src/public/info/myinfo.html'
+      templateUrl: 'src/public/info/myinfo.html',
+      controller: 'MyInfoController',
+      controllerAs: 'myInfoCtrl',
+      resolve: {
+        favDish: ['CommonService','MenuService', function(CommonService,MenuService){
+          var userInfo =  CommonService.getUserInfo();
+          if(userInfo != undefined && userInfo.favdishSN != undefined) {
+            return MenuService.getMenuItemByShortName(userInfo.favdishSN);
+          } else {
+            return null;
+          }
+        }]
+      }
     })
     .state('public.signUp', {
       url: '/signup',
-      templateUrl: 'src/public/signup.html'
+      templateUrl: 'src/public/signUp/signup.html',
+      controller: 'SignUpController',
+      controllerAs: 'signUpCtrl'
     });
 }
 })();
